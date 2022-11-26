@@ -21,7 +21,7 @@ public class JdbcMemoRepositoryTest {
     JdbcMemoRepository jdbcMemoRepository;
 
     @Test
-    void insertMemoTest(){
+    void insertMemoTest() {
         //given
         Memo newMemo = new Memo(1, "this is new memo~");
 
@@ -35,7 +35,7 @@ public class JdbcMemoRepositoryTest {
 
 
     @Test
-    void findAllMemoTest(){
+    void findAllMemoTest() {
         List<Memo> memoList = jdbcMemoRepository.findAll();
 
         System.out.println(memoList);

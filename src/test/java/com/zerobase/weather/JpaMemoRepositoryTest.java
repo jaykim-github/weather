@@ -21,7 +21,7 @@ public class JpaMemoRepositoryTest {
     JpaMemoRepository jpaMemoRepository;
 
     @Test
-    void insertMemoTest(){
+    void insertMemoTest() {
         //given
         Memo newMemo = new Memo(10, "this is jpa memo");
 
@@ -34,7 +34,7 @@ public class JpaMemoRepositoryTest {
     }
 
     @Test
-    void findByIdTest(){
+    void findByIdTest() {
         //given
         Memo newMemo = new Memo(11, "jpa");
 

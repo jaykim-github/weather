@@ -9,14 +9,14 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 @SpringBootTest
 class WeatherApplicationTests {
 
-	@Test
-	void equalTest(){
-		assertEquals(1,1);
-	}
+    @Test
+    void equalTest() {
+        assertEquals(1, 1);
+    }
 
-	@Test
-	void nullTest(){
-		assertNull(null);
-	}
+    @Test
+    void nullTest() {
+        assertNull(null);
+    }
 
 }
