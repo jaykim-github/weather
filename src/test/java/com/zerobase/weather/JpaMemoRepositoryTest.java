@@ -14,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @SpringBootTest
-@Transactional
+@Transactional //테스트에 붙이면 무조건 커밋하지 않는다. 롤백 처리 해준다.
 public class JpaMemoRepositoryTest {
 
     @Autowired
