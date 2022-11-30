@@ -44,12 +44,12 @@ public class DiaryService {
         this.dateWeatherRepository = dateWeatherRepository;
     }
 
-//    @Transactional
-//    @Scheduled(cron = "0 1 * * * * *")
-//    public void saveWeatherDate() {
-//        dateWeatherRepository.save(getWeatherFromApi());
-//        logger.info("데이터 가져오기 성공");
-//    }
+    @Transactional
+    @Scheduled(cron = "0 0 1 * * *") //새벽 한시에 날씨 데이터 불러오기
+    public void saveWeatherDate() {
+        dateWeatherRepository.save(getWeatherFromApi());
+        logger.info("데이터 가져오기 성공");
+    }
 
     private DateWeather getWeatherFromApi(){
         //open weather map에서 날씨 데이터 가져오기
