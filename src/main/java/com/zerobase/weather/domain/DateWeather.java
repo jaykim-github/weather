@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 @Getter
 @Setter
-@Entity(name="date_weather")
+@Entity(name = "date_weather")
 @NoArgsConstructor
 public class DateWeather {
 

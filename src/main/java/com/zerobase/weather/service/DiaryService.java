@@ -39,7 +39,8 @@ public class DiaryService {
     @Value("${openweathermap.key}")
     private String apikey;
 
-    public DiaryService(DiaryRepository diaryRepository, DateWeatherRepository dateWeatherRepository) {
+    public DiaryService(DiaryRepository diaryRepository,
+        DateWeatherRepository dateWeatherRepository) {
         this.diaryRepository = diaryRepository;
         this.dateWeatherRepository = dateWeatherRepository;
     }
@@ -51,7 +52,7 @@ public class DiaryService {
         logger.info("데이터 가져오기 성공");
     }
 
-    private DateWeather getWeatherFromApi(){
+    private DateWeather getWeatherFromApi() {
         //open weather map에서 날씨 데이터 가져오기
         String weatherData = getWeatherString();
         //받아온 날씨 json 파싱하기
@@ -66,12 +67,12 @@ public class DiaryService {
         return dateWeather;
     }
 
-    private DateWeather getDateWeather(LocalDate date){
-        List<DateWeather> dateWeatherListFromDB =dateWeatherRepository.findAllByDate(date);
-        if(dateWeatherListFromDB.size() == 0){
+    private DateWeather getDateWeather(LocalDate date) {
+        List<DateWeather> dateWeatherListFromDB = dateWeatherRepository.findAllByDate(date);
+        if (dateWeatherListFromDB.size() == 0) {
             //정책을 정해야하나..
             return getWeatherFromApi();
-        }else{
+        } else {
             return dateWeatherListFromDB.get(0);
         }
 
@@ -95,7 +96,7 @@ public class DiaryService {
 
     private String getWeatherString() {
         String apiUrl =
-                "https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=" + apikey;
+            "https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=" + apikey;
         try {
             URL url = new URL(apiUrl);
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
